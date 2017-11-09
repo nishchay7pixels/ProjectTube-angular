@@ -1,0 +1,39 @@
+<div class="player">
+  <div class="player-window">
+    <div class="smallbutton" (click)="closePlayer()"  [ngClass]="{'smallbutton': enabled, 'hidden': !enabled}">
+    <a  class="nav-link nav-icon">
+      <clr-icon shape="window-close"></clr-icon>
+    </a></div>
+    <div>
+    <youtube-player
+      [videoId]="id"
+      (ready)="savePlayer($event)"
+      (change)="onStateChange($event)"
+    ></youtube-player></div>
+  </div>
+  <header class="header-6">
+    <div class="header-nav">
+      <a (click)="expanded?minimizePlayer():expandPlayer()" class="nav-link nav-icon">
+        <clr-icon shape="resize"></clr-icon>
+      </a>
+      <!--<a href="{{ytps.player.getVideoUrl()}}" class="nav-link nav-icon" target="_blank">-->
+        <!--<clr-icon shape="pop-out"></clr-icon>-->
+      <!--</a>-->
+    </div>
+    <div class="header-actions">
+        <a (click)="sound?muteVideo():unmuteVideo()" class="nav-link nav-icon">
+          <clr-icon *ngIf="sound" shape="volume-up"></clr-icon>
+          <clr-icon *ngIf="!sound" shape="volume-mute"></clr-icon>
+        </a>
+
+        <a (click)="playing?stopVideo():playVideo()" class="nav-link nav-icon">
+          <clr-icon *ngIf="playing" shape="stop"></clr-icon>
+          <clr-icon *ngIf="!playing" shape="play"></clr-icon>
+        </a>
+
+      <a (click)="nextVideo()" class="nav-link nav-icon">
+        <clr-icon shape="step-forward"></clr-icon>
+      </a>
+    </div>
+  </header>
+</div>

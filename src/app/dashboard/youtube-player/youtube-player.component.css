@@ -1,0 +1,27 @@
+.player{
+  z-index: 100;
+  bottom: 0px;
+  position: fixed;
+  width: 100%;
+  display: inline-block;
+}
+.container{
+  padding-left: 0px;
+  margin-left: inherit;
+}
+.smallbutton{
+  width: 25px;
+  height: 25px;
+  background-color: black;
+
+}
+
+.hidden{
+  visibility: hidden;
+}
+
+.player-window{
+  display: inline-block;
+  position: inherit;
+  bottom: 65px;
+}

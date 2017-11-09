@@ -1,6 +1,39 @@
-# YoutubePlayer
+# TubePlayer
+This is an angular4 component based on YouTube’s iframe API and Youtube's data API. This is an alternative player for watching and listening to media from YouTube.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.1.1.
+
+
+# Built With
+Angular4 (typescript) (https://angular.io)
+vmware Project Clarity (https://vmware.github.io/clarity/)
+Font-awesome – font and css toolkit (http://fontawesome.io/)
+YouTube data api v3 (https://developers.google.com/YouTube/v3/)
+YouTube iframe api (https://developers.google.com/YouTube/iframe_api_reference)
+
+# Features
+searching videos and playlists WHILE playing a video
+
+Different Player dimensions- minimized, small, medium, fullscreen
+
+watching videos with player functionality and media center user interface in mind
+
+queue your favorite videos to a now playlist feature
+
+# Features to be included in Future
+ allow to add/remove a video to your playlist
+ 
+ save now playing as a playlist
+ 
+ creating playlists
+ 
+ searching for playlists
+ 
+ syncs the current state to your machine - your playlist is not lost.
+ 
+ login with your YouTube user and view/queue your playlists to now playing
+
+
 
 ## Development server
 

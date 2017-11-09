@@ -1,0 +1,108 @@
+
+<app-user-playlist [@slideInOut]="menuState"></app-user-playlist>
+
+<header class="header-6">
+
+
+
+  <div class="branding">
+    <a href="" class="nav-link">
+      <clr-icon shape="play"></clr-icon>
+      <span class="title">Project<b>Tube</b></span>
+    </a>
+  </div>
+  <form class="search" [formGroup]="formGroup" novalidate>
+    <label for="search_input">
+      <input id="search_input" type="text" placeholder="Search for keywords..." formControlName="searchFor" (keyup.enter)="Search()">
+    </label>
+  </form>
+  <div class="header-actions">
+    <a (click)="toggleUserPlaylist()" class="nav-link nav-icon">
+      <clr-icon shape="view-list"></clr-icon>
+    </a>
+  </div>
+</header>
+<nav class="subnav" style="align-content: center">
+  <ul class="nav">
+    <li class="nav-item">
+      <a class="nav-link" (click)="getTrending()">Trending</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" (click)="getCategories()">What I may like!</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" (click)="getLiveVideos()">Live</a>
+    </li>
+  </ul>
+</nav>
+
+<div>
+
+
+<!--Here-->
+  <div class="container video-list" infinite-scroll
+       [infiniteScrollDistance]="2"
+       [infiniteScrollThrottle]="300"
+       (scrolled)="onScroll()">
+
+    <main class="row" >
+
+      <div class="card clickable col-xs-3" id="{{i + result.id}}" *ngFor="let result of results; let i = index;"  (click)="playThisVideo(result.id,result.snippet.title)">
+        <div class="card-header">
+
+          <p style="color: blue">
+            <b>{{ result.snippet?.title | playlistItemName}}</b>
+          </p>
+        </div>
+        <div class="card-block">
+          <div class="card-img overlay">
+            <img src="{{result.snippet?.thumbnails.high.url}}">
+          </div>
+        </div>
+        <div class="card-footer">
+          <p class="text">{{result.snippet?.channelTitle}}</p>
+
+        </div>
+      </div>
+
+    </main>
+  </div>
+</div>
+<!--<div *ngIf="categoryList">-->
+
+  <!--&lt;!&ndash;Here&ndash;&gt;-->
+  <!--<div class="container video-list" infinite-scroll-->
+       <!--[infiniteScrollDistance]="2"-->
+       <!--[infiniteScrollThrottle]="300"-->
+       <!--(scrolled)="onScroll()">-->
+
+    <!--<main class="row" >-->
+
+      <!--<div class="card clickable col-xs-3" id="{{i + result.id}}" *ngFor="let result of results; let i = index;"  (click)="playThisVideo(result.id,result.snippet.title)">-->
+        <!--<div class="card-header">-->
+
+          <!--<p style="color: blue">-->
+            <!--<b>{{ result.snippet?.title | playlistItemName}}</b>-->
+          <!--</p>-->
+        <!--</div>-->
+        <!--<div class="card-block">-->
+          <!--<div class="card-img overlay">-->
+            <!--<img src="{{result.snippet?.thumbnails.high.url}}">-->
+          <!--</div>-->
+        <!--</div>-->
+        <!--<div class="card-footer">-->
+          <!--<p class="text">{{result.snippet?.channelTitle}}</p>-->
+
+        <!--</div>-->
+      <!--</div>-->
+
+    <!--</main>-->
+  <!--</div>-->
+<!--</div>-->
+
+<div>
+  <br>
+  <br>
+  <br>
+  <br>
+</div>
